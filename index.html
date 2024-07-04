@@ -1,35 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <script src="js/script.js"></script>
+    <title>Notificação Posturas</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="script/script.js"></script>
 </head>
+
 <body>
-    <header><h2>FORMULÁRIO</h2></header>
-    <section class="container">
-        <form>
-            <h5>CONTATO</h5>
-            <label for="name">Nome:</label>
-            <input id="name" type="text" placeholder="Digite seu nome.." autocomplete="off"><br>
-            <label for="name">Cidade:</label>
-            <input id="name" type="text" placeholder="Digite seu setor..." autocomplete="off"><br>
-            <label for="name">E-mail:</label>
-            <input id="name" type="text" placeholder="Digite seu e-mail..." autocomplete="off"><br>
-            <label for="name">I.D</label>
-            <input id="name" type="text" placeholder="Digite seu ID.." autocomplete="off"><br>
-            <label for="name">Telefone:</label>
-            <input id="name" type="text" placeholder="Digite seu telefone..." autocomplete="off"><br>
-            <label for="name">Senha:</label>
-            <input id="name" type="text" placeholder="Digite sua senha..." autocomplete="off"><br>
-            <textarea id="textarea" autocomplete="off"></textarea><br>
-            <button id="enviar">Enviar</button>
-            
+    <div class="container">
+        <h2 id="notificacao">NOTIFICAÇÃO POSTURAS</h2>
+        <form id="formulario" method="post" action="#">
+            <div>
+                <label for="numeroNotifi">NÚMERO NOTIFICAÇÃO:</label>
+                <input type="text" id="numeroNotifi" name="numeroNotifi" required>
+            </div>
+            <select id="tipo" name="tipo" required>
+                <option value="V - Jogar entulhos provenientes de construções e demolições nas vias públicas, em terrenos de terceiros ou em terrenos baldios; Art. 12 - O responsável pela execução de serviços de construção de edificações, bem como consertos e conservação de edificações, fica obrigado a manter permanentemente em perfeito estado de limpeza o leito do logradouro público, no trecho compreendido pelas obras.">ENTULHO</option>
+                <option value="IV - Queimar, mesmo no interior de terrenos, lixos, detritos, plantas ou objetos em quantidade capaz de causar incômodo à vizinhança;">QUEIMA EM QUINTAL</option>
+                <option value="COPASA">COPASA</option>
+                <option value="LOTE-SUJO">LOTE-SUJO</option>
+            </select>
+            <div>
+                <label for="endereco">ENDEREÇO DO LOTE:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+            <div>
+                <label for="bairro">BAIRRO:</label>
+                <input type="text" id="bairro" name="bairro" required>
+            </div>
+            <div>
+                <label for="proprietario">NOME DO NOTIFICADO:</label>
+                <input type="text" id="proprietario" name="proprietario" required>
+            </div>
+            <div>
+                <label for="numero_dias">PRAZO (em dias):</label>
+                <input type="number" id="numero_dias" name="numero_dias" required>
+            </div>
+            <div class="secfoto">
+                <label for="foto">SELECIONAR FOTO:</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+            <div>
+                <button type="button" id="gerarPDF">Gerar Notificação</button>
+                <p class="error-message" id="error-message"></p>
+            </div>
         </form>
-    </section>
-    <footer><p>&copy;Todos os direitos reservados!</p></footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.0/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
 </body>
 </html>

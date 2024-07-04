@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Notificação de Lote Sujo</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="script/script.js"></script>
+    </head>
+   
+    <body>
+    
+        <div class="container">
+            
+            <h2 id="notificacao">NOTIFICAÇÃO LOTE SUJO</h2>
+
+            <form id="formulario" method="post" action="#">
+                <div>
+                    <label for="numero_lote">NÚMERO NOTIFICAÇÃO:</label>
+                    <input type="text" id="numero_lote" name="numero_lote" required>
+                </div>
+                <div>
+                    <label for="endereco">ENDEREÇO DO LOTE:</label>
+                    <input type="text" id="endereco" name="endereco" required>
+                </div>
+                <div>
+                    <label for="bairro">BAIRRO:</label>
+                    <input type="text" id="bairro" name="bairro" required>
+                </div>
+                <div>
+                    <label for="proprietario">NOME DO PROPRIETÁRIO:</label>
+                    <input type="text" id="proprietario" name="proprietario" required>
+                </div>
+                <div>
+                    <label  for="numero_dias">PRAZO (em dias):</label>
+                    <input type="number" id="numero_dias" name="numero_dias" required>
+                </div>
+                <div>
+                    <!-- Adicionar o input para selecionar a foto -->
+                    <label for="foto">SELECIONAR FOTO:</label>
+                    <input type="file" id="foto" name="foto" accept="image/*">
+                </div>
+                <div>
+                    <button type="button" id="gerarPDF">Gerar Notificação</button>
+                    <p class="error-message" id="error-message"></p>
+                </div>
+            </form>
+            
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.0/html2pdf.bundle.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    </body>
+</html>
